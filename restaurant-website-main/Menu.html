@@ -1,0 +1,3609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Millet Tales BY Chai Club| Premium Menu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles */
+        :root {
+            --dark-bg: #0f0f0f;
+            --darker-bg: #080808;
+            --light-text: #f5f5f5;
+            --accent-color: #8b0000;
+            --accent-hover: #a52a2a;
+            --secondary-color: #2c2c2c;
+            --tertiary-color: #3d3d3d;
+            --text-muted: #a0a0a0;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .bg-dark {
+            background-color: var(--darker-bg);
+        }
+
+        /* Header & Navigation */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(15, 15, 15, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar {
+            padding: 0.1em 2em;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--light-text);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-item {
+            margin-left: 30px;
+        }
+
+        .nav-link {
+            color: var(--light-text);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 400;
+            transition: var(--transition);
+            position: relative;
+        }
+    
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent-color);
+        }
+
+        .cart-icon {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .cart-count {
+            background: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            position: absolute;
+            top: -10px;
+            right: -10px;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: var(--light-text);
+            transition: var(--transition);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 2px;
+            text-decoration: none;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            font-size: 14px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: var(--light-text);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--light-text);
+            border: 1px solid var(--light-text);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--light-text);
+            color: var(--dark-bg);
+        }
+
+        /* Page Hero */
+        .page-hero {
+            height: 50vh;
+            background: linear-gradient(rgba(32, 31, 31, 0.4), rgba(27, 27, 27, 0.9)), url(images/redd-francisco-o1SDSKCe8IE-unsplash.jpg) no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 80px;
+            background-position: center ;
+        }
+
+        .page-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+        }
+
+        .page-hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+        }
+
+        /* Menu Navigation */
+        .menu-categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 30px 0;
+            background: var(--darker-bg);
+            position: sticky;
+            top: 80px;
+            z-index: 100;
+        }
+
+        .category-link {
+            padding: 10px 25px;
+            background-color: var(--secondary-color);
+            color: var(--light-text);
+            text-decoration: none;
+            border-radius: 30px;
+            transition: var(--transition);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .category-link:hover, .category-link.active {
+            background-color: var(--accent-color);
+        }
+
+        /* Modern Menu Grid */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 50px  0;
+       
+        }
+
+        .menu-item {
+            background: var(--secondary-color);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+   .item-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .menu-item:hover .item-image img {
+            transform: scale(1.1);
+        }
+
+        .item-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #00b300;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+
+        }
+        .item-badge1 {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #FFC107;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+
+        }
+        .item-badge2 {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #800000;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+
+        }
+        
+
+        .item-info {
+            padding: 20px;
+        }
+
+        .item-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--light-text);
+        }
+
+        .item-info p {
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .item-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        .item-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+
+        .item-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-add, .btn-buy {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .btn-add {
+            background-color: transparent;
+            color: var(--light-text);
+            border: 1px solid var(--light-text);
+        }
+
+        .btn-add:hover {
+            background-color: var(--light-text);
+            color: var(--dark-bg);
+        }
+
+        .btn-buy {
+            background-color: var(--accent-color);
+            color: var(--light-text);
+        }
+
+        .btn-buy:hover {
+            background-color: var(--accent-hover);
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-top: 30px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 2px;
+            background-color: var(--accent-color);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        /* Cart Modal */
+        .cart-modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        .cart-modal-content {
+            background-color: var(--darker-bg);
+            margin: 5% auto;
+            padding: 30px;
+            border: 1px solid var(--secondary-color);
+            border-radius: 10px;
+            width: 90%;
+            max-width: 600px;
+            position: relative;
+            animation: modalFadeIn 0.3s ease;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .cart-close {
+            color: var(--text-muted);
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .cart-close:hover {
+            color: var(--light-text);
+        }
+
+        .cart-title {
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .cart-items {
+            margin-bottom: 20px;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--tertiary-color);
+        }
+
+        .cart-item-info h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .cart-item-info p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .cart-item-price {
+            font-weight: 600;
+            color: var(--accent-color);
+        }
+
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .quantity-btn {
+            background: var(--secondary-color);
+            border: none;
+            color: var(--light-text);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .quantity-btn:hover {
+            background: var(--accent-color);
+        }
+
+        .cart-item-remove {
+            background: transparent;
+            border: none;
+            color: #ff6b6b;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .cart-item-remove:hover {
+            color: #ff3838;
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-top: 2px solid var(--accent-color);
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .cart-buttons {
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        /* Formspree Modal */
+        .formspree-modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        .formspree-modal-content {
+            background-color: var(--darker-bg);
+            margin: 5% auto;
+            padding: 30px;
+            border: 1px solid var(--secondary-color);
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            animation: modalFadeIn 0.3s ease;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .formspree-close {
+            color: var(--text-muted);
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .formspree-close:hover {
+            color: var(--light-text);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: var(--secondary-color);
+            border: 1px solid var(--tertiary-color);
+            border-radius: 3px;
+            color: var(--light-text);
+            font-family: 'Montserrat', sans-serif;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        .order-summary {
+            background: var(--secondary-color);
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .order-summary h4 {
+            margin-bottom: 10px;
+            border-bottom: 1px solid var(--tertiary-color);
+            padding-bottom: 5px;
+        }
+
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .menu-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 80px;
+                flex-direction: column;
+                background-color: var(--dark-bg);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+                padding: 20px 0;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-item {
+                margin: 15px 0;
+            }
+            
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .page-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .cart-modal-content, .formspree-modal-content {
+                width: 95%;
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .category-link {
+                padding: 8px 15px;
+                font-size: 13px;
+            }
+                 .page-hero {
+                    max-height: 40vh;
+                 }
+            
+            .item-actions {
+                flex-direction: column;
+            }
+            
+            .btn-add, .btn-buy {
+                width: 100%;
+                text-align: center;
+            }
+
+            .cart-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .cart-item-quantity {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .cart-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo">Millet Tales BY Chai Club<img src="maincourse/logo.jpg" alt="logo" style="width: 28px; height: 28px; margin-left: 8px; vertical-align: middle; border-radius: 4px; object-fit: cover;" /></a>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="menu.html" class="nav-link active">Menu</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a href="reserve.html" class="nav-link">Reservations</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a href="index.html#contact" class="nav-link">Contact</a>
+                    </li>
+                
+
+
+                       
+                    <!-- <li class="nav-item">
+                        <a href="#" class="nav-link cart-icon"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a>
+                    </li> -->
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Menu Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Our Menu</h1>
+            <p>Welcome to Chai Club — where every sip and bite blends tradition with trend! From wholesome millet breakfasts and aromatic biryanis to crispy snacks and refreshing beverages, taste the perfect mix of comfort, health, and modern café vibes.</p>
+        </div>
+    </section>
+
+    <!-- Menu Navigation -->
+    <section class="menu-nav">
+        <div class="container">
+            <div class="menu-categories">
+                <a href="#appetizers" class="category-link active">🍽️ Millet Breakfast</a>
+                <a href="#mains" class="category-link">🍛 Main Course</a>
+                <a href="#snacks" class="category-link">🍴 Snacks & Bites</a>
+                <a href="#beverages" class="category-link">🥤 Beverages</a>
+                <a href="#chefs" class="category-link">👨‍🍳 Chef’s Specials</a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Appetizers -->
+    <section id="appetizers" class="menu-section section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">🍽️ Millet Breakfast</h2>
+                <p class="section-subtitle">Smart mornings start with millets — healthy, tasty, and full of energy!</p>
+            </div>
+            <div class="menu-grid">
+                <!-- Appetizer 1 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="breakfast/ragi dosa.png" alt="GArlic Bread">
+                        <div class="item-badge">veg</div>
+                    </div>
+                    <div class="item-info">
+                        <h3>🌾 Ragi Dosa</h3>
+                        <p>Nutty, healthy dosa made from finger millet-crispy, wholesome, and perfect with chutney </p>
+                        <div class="item-meta">
+                            <span class="item-price">₹40</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="1" data-name="Garlic Bread" data-price="89" data-img="https://images.unsplash.com/photo-1619894991209-32b8fb1d5ce3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Zm9pZSUyMGdyYXN8ZW58MHx极MHx8fDA%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="1" data-name="Garlic Bread" data-price="89">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+         
+                <!-- Appetizer 2 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="breakfast/ragi idly.webp" alt="Oceanic Caviar">
+                        <div class="item-badge">veg</div>
+                    </div>
+                    <div class="item-info">
+                        <h3 id="oceaniccaviar">🌾 Ragi Idly (2 pcs)</h3>
+                        <p>Healthy millet idlis with a mild earthy flavor, steamed to perfection.</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹40</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="2" data-name="Mozzarella Sticks" data-price="85" data-img="https://images.unsplash.com/photo-1587334274527-ba54f0b5a357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2F2aWFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="2" data-name="Mozzarella Sticks" data-price="85">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <!-- Appetizer 3 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="breakfast/jonna dosa.jpg" alt="Truffle Arancini">
+                        <div class="item-badge">veg</div>
+                    </div>
+                    <div class="item-info">
+                        <h3>🌾 Jonna Dosa</h3>
+                        <p>Jonna Dosa — a crispy, fiber-rich millet delight that’s light, healthy, and irresistibly tasty!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹40</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="3" data-name="Truffle Arancini" data-price="26" data-img="https://images.unsplash.com/photo-1633896949678-1b4极11d6b0a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHRydWZmbGUlMjBhcmFuY2luaXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="3" data-name="Truffle Arancini" data-price="26">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Appetizer 4 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="breakfast/jonna idly.jpg" alt="Scallop Ceviche">
+                        <div class="item-badge">veg</div>
+                    </div>
+                    <div class="item-info">
+                        <h3>🌾 Jonna Idly (2 pcs)</h3>
+                        <p>our Jonna Idly (Sorghum Idly) is a wholesome twist on the classic South Indian favorite!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹40</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="4" data-name="Scallop Ceviche" data-price="29" data-img="https://images.unsplash.com/photo-1603360946369-dc9bbd814503?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8极HNjYWxsb3AlMjBjZXZpY2hlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="4" data-name="Scallop Ceviche" data-price="29">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Appetizer 5 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="breakfast/korra dosa.jpg" alt="Oyster Tasting">
+                        <div class="item-badge">veg</div>
+                    </div>
+                    <div class="item-info">
+                        <h3>🌾 Korra Dosa</h3>
+                        <p>our Korra Dosa (Foxtail Millet Dosa) brings you a perfect balance of taste and nutrition in every bite!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹40</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="5" data-name="Chicken Wings" data-price="36" data-img="https://images.unsplash.com/photo-1516100882582-96c3a05fe590?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fG95c3RlciUyMHRhc3Rpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="5" data-name="Chicken Wings" data-price="36">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Appetizer 6 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="breakfast/korra idly.jpg" alt="Hamachi Carpaccio">
+                        <div class="item-badge">veg</div>
+                    </div>
+                    <div class="item-info">
+                      
+                        <h3 >🌾 Korra Idly (2 pcs)</h3>
+                        <p>our Korra Idly is a healthy start to your day with a touch of tradition!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹40</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="6" data-name="Hamachi Carpaccio" data-price="28" data-img="https://images.unsplash.com/photo-1625943553695-10dca9395c23?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FycGFjY2lvfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=极0">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="6" data-name="Hamachi Carpaccio" data-price="28">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Appetizer 7 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="breakfast/ghee karam dosa.jpg" alt="Tuna Tartare">
+                        <div class="item-badge">veg</div>
+                    </div>
+                    <div class="item-info">
+                        <h3>ghee karam dosa</h3>
+                        <p>our Ghee Karam Dosa sizzles with fiery red chutney and melts in rich, aromatic ghee for the ultimate comfort bite!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹40</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="7" data-name="Vegetable Spring Rolls" data-price="24" data-img="https://images.unsplash.com/photo-1559847844-d721426d1极9d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHR1bmElMjB0YXJ0YXJlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="7" data-name="Vegetable Spring Rolls" data-price="24">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Appetizer 8 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="breakfast/special dosa.jpg" alt="Hummus with Pita Bread">
+                        <div class="item-badge1">Chef’s Special</div>
+                    </div>
+                    <div class="item-info">
+                        <h3>special dosa</h3>
+                        <p>a chef’s signature creation loaded with flavor, crisp perfection, and a touch of surprise in every bite!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹40</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="8" data-name="Hummus with Pita Bread" data-price="22" data-img="https://images.unsplash.com/photo-1529042410759-befb1204b468?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGJydXNjaGV0dGF8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="8" data-name="Hummus with Pita Bread" data-price="22">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Course -->
+    <section id="mains" class="menu-section section-padding bg-dark">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">🍛 Main Course</h2>
+                <p class="section-subtitle">Dive into our hearty main course — from aromatic biryanis to rich, flavorful pulaos, every plate is crafted to satisfy your cravings with a perfect blend of spice and soul!</p>
+            </div>
+            <div class="menu-grid">
+                <!-- Main 1 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="maincourse/chicken pulao.jpg" alt="grilled chicken">
+                        <div class="item-badge2">Non-Veg</div>
+                    </div>
+                    <div class="item-info">
+                        <h3>🍗 Chicken Cooker Pulao</h3>
+                        <p>Tender chicken cooked with fragrant basmati rice and rich spices — our Chicken Pulao is pure comfort served with irresistible aroma in every bite!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹129</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="9" data-name="Grilled Chicken with Herbs" data-price="125" data-img="https://images.unsplash.com/photo-1600891964092-4316c288032e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHdhZ3l1JTIwc3RlYWt8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="9" data-name="Grilled Chicken with Herbs" data-price="125">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main 2 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="maincourse/mutton pulao.jpg" alt="Beaf Steak">
+                        <div class="item-badge2">Non-Veg</div>
+                    </div>
+                    <div class="item-info">
+                        <h3>🥩 Mutton Cooker Pulao</h3>
+                        <p>Succulent mutton slow-cooked with fragrant basmati rice and bold spices — our Mutton Pulao is a royal treat that bursts with flavor in every bite!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹160</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="10" data-name="Beef Steak with Mushroom Sauce" data-price="78" data-img="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NX极8bG9ic3RlciUyMHRoZXJtaWRvcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="10" data-name="Beef Steak with Mushroom Sauce" data-price="78">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <!-- Main 3 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="maincourse/paneer pulao.jpg" alt="Baked Salmon">
+                        <div class="item-badge">veg</div>
+                    </div>
+                    <div class="item-info">
+                        <h3>🥦 Paneer Cooker Pulao</h3>
+                        <p>Soft paneer cubes tossed with aromatic basmati rice, herbs, and mild spices — our Paneer Pulao is a perfect blend of flavor, freshness, and comfort!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹119</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="11" data-name="Baked Salmon with Lemon Butter" data-price="68" data-img="https://images.unsplash.com/photo-1608571423906-2da1e376b7ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2极8Mnx8cmFjayUyMG9mJTIwbGFtYnxlbnww极HwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="11" data-name="Baked Salmon with Lemon Butter" data-price="68">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main 4 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="maincourse/bagara chicken.jpg" alt="Chicken Tikka">
+                        <div class="item-badge2">Non-Veg</div>
+                        <!-- <div class="item-badge">Tikka Specials</div> -->
+                    </div>
+                    <div class="item-info">
+                        <h3>🌾 Bagara Chicken</h3>
+                        <p>A rich Hyderabadi classic — our Bagara Chicken is simmered in a creamy, nutty gravy bursting with aromatic spices and irresistible flavor!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹99</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="12" data-name="Chicken Tikka Masala" data-price="42" data-img="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fG11c2hyb29tJTIwcmlzb3R0b3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="12" data-name="Chicken Tikka Masala" data-price="42">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main 5 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="maincourse/sambar rice.jpg" alt="">
+                        <div class="item-badge">veg</div>
+                    </div>
+                    <div class="item-info">
+                        <h3>🥣 Sambar Rice</h3>
+                        <p>A South Indian comfort classic — our Sambar Rice blends tangy lentils, fresh veggies, and aromatic spices into a wholesome, soul-satisfying meal!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹99</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="13" data-name="Vegetable Stir Fry" data-price="58" data-img="https://images.unsplash.com/photo-1604503468506-a6da5e6ad46b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZHVjayUyMGJyZWFzdHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="13" data-name="Vegetable Stir Fry" data-price="58">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main 6 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="maincourse/veg biryani.jpg" alt="lamb Curry">
+                        <div class="item-badge">veg</div>
+                        <!-- <div class="item-badge">For Two</div> -->
+                    </div>
+                    <div class="item-info">
+                        <h3>🥦 Veg Biryani</h3>
+                        <p>Aromatic basmati rice layered with fresh veggies and fragrant spices — our Veg Biryani is a colorful feast of flavor, fragrance, and pure satisfaction!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹119</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="14" data-name="Lamb Curry" data-price="145" data-img="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c2VhZm9vZHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="14" data-name="Lamb Curry" data-price="145">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Main 6 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="maincourse/alu biryani.jpg" alt="lamb Curry">
+                        <div class="item-badge">veg</div>
+                        <!-- <div class="item-badge">For Two</div> -->
+                    </div>
+                    <div class="item-info">
+                        <h3>🥔 Alu Biryani</h3>
+                        <p>fluffy basmati rice layered with golden spiced potatoes, rich biryani masala, and a burst of modern desi flavors in every bite!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹119</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="14" data-name="Lamb Curry" data-price="145" data-img="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c2VhZm9vZHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="14" data-name="Lamb Curry" data-price="145">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main 7 -->
+                <!-- <div class="menu-item">
+                    <div class="item-image">
+                        <img src="images/WhatsApp Image 2025-09-12 at 6.13.15 AM.jpeg" alt="Filet Mignon">
+                    </div>
+                    <div class="item-info">
+                        <h3>Grilled Prawns with Garlic Butter</h3>
+                        <p>Large prawns grilled to perfection with garlic butter</p>
+                        <div class="item-meta">
+                            <span class="item-price">$62</span>
+                            <div class="item-actions">
+                                <button class="btn-add" data-id="15" data-name="Grilled Prawns with Garlic Butter" data-price="62" data-img="https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZmlsZXQlMjBtaWdub258ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button>
+                                <button class="btn-buy" data-id="15" data-name="Grilled Prawns with Garlic Butter" data-price="62">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- Main 8 -->
+                <!-- <div class="menu-item">
+                    <div class="item-image">
+                        <img src="images/WhatsApp Image 2025-09-12 at 6.14.34 AM.jpeg" alt="roasted chicken">
+                    </div>
+                    <div class="item-info">
+                        <h3>Honey-Glazed Roasted Chicken</h3>
+                        <p>Slow-roasted chicken brushed with honey glaze.</p>
+                        <div class="item-meta">
+                            <span class="item-price">$74</span>
+                            <div class="item-actions">
+                                <button class="btn-add" data-id="16" data-name="Honey-Glazed Roasted Chicken" data-price="74" data-img="https://images.unsplash.com/photo-1594041680534-e8c8cdebd659?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dmVhbCUyMGNob3B8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button>
+                                <button class="btn-buy" data-id="16" data-name="Honey-Glazed Roasted Chicken" data-price="74">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Snacks -->
+    <section id="snacks" class="menu-section section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">🍴 Snacks & Bites</h2>
+                <p class="section-subtitle">Crispy, tasty, and made to share — our snacks range from spicy bites to cheesy delights, perfect for every mood and every chai!</p>
+            </div>
+            <section class="menu-nav">
+        <div class="container">
+            <div class="menu-categories">
+                <a href="#momos" class="category-link active">🥟 Momos</a>
+                <a href="#waffels" class="category-link">🧇 Waffles</a>
+                <a href="#frankierolls" class="category-link">🌯 Frankie Rolls</a>
+                <a href="#puffs" class="category-link">🥐 Puffs</a>
+                <a href="#samosa" class="category-link">🥟 Samosas</a>
+                <a href="#chickenStaters" class="category-link">🍗 Chicken Starters</a>
+                <a href="#FromTheFryer" class="category-link">🍟 Fryer Snacks</a>
+                <a href="#pizza" class="category-link">🍕 Pizzas </a>
+                <a href="#sandwich" class="category-link">🥙 Sandwiches</a>
+             </div>
+        </div>
+    </section>
+    <section id="momos" class="menu-section section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">🥟 Momos</h2>
+                <p class="section-subtitle">Soft on the outside, juicy on the inside — our Momos are the perfect bite of flavor, steam, and street-style goodness!</p>
+            </div>
+            <div class="menu-grid">
+                <!-- Dessert 1 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="snacks/veg fried momos - Copy.jpg" alt="Chocolate Symphony">
+                        
+                      
+                    </div>
+                    <div class="item-info">
+                        <h3>🥟 Momos</h3>
+                        <p>Hot, soft, and irresistibly tasty momos!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹60</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="17" data-name="Chocolate Lava Cake" data-price="24" data-img="https://images.unsplash.com/photo-1623334044303-241021148842?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGNob2NvbGF0ZSUyMGRlc3NlcnR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="17" data-name="Chocolate Lava Cake" data-price="24">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dessert 2 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="snacks/momos - Copy.jpg" alt="cheese Cake">
+                        <div class="item-badge">veg</div>
+                    </div>
+                    <div class="item-info">
+                        <h3>🥦 Veg Fried Momos (6 pcs)</h3>
+                        <p>Crispy golden momos packed with spiced veggie goodness — 6 pieces of pure crunchy delight!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹79</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="18" data-name="Cheesecake with Berries" data-price="22" data-img="https://images.unsplash.com/photo-1631051023565-e76853205146?ixlib=rb-4.0.3&ixid=M3wxMjA极fDB8MHxzZWFyY2h8NHx8c291ZmZsZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">极 to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="18" data-name="Cheesecake with Berries" data-price="22">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dessert 3 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="snacks/steamed veg momos - Copy.jpg" alt="Brownies">
+                    <div class="item-badge">veg</div>
+                    </div>
+                    <div class="item-info">
+                        <h3>🥦 Veg Steamed Momos (6 pcs)</h3>
+                        <p>Soft, warm, and bursting with flavorful veggies — 6 pieces of healthy, steam-fresh delight!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹60</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="19" data-name="Brownies with Icecream" data-price="20" data-img="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZnJ1aXQlMjB0YXJ0fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="19" data-name="Brownies with Icecream" data-price="20">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dessert 4 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="snacks/fried chicken momos - Copy.jpg" style="object-position: center 70%;" alt="Fruit Tart">
+                        <div class="item-badge2">Non-Veg</div>
+                    </div>
+                    <div class="item-info">
+                        <h3>🍗 Chicken Fried Momos (6 pcs)</h3>
+                        <p>Crispy on the outside, juicy chicken inside — 6 pieces of pure crunchy perfection!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹109</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="20" data-name="Friut Tart" data-price="18" data-img="https://images.unsplash.com/photo-149963613621极-6f4ee915583e?ixlib=rb-4.0.3&ixid=M3wxMjA3f极B8MHxzZWFyY2h8NXx8Y3JlYW0lMjBicnVsZWV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="20" data-name="Friut Tart" data-price="18">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dessert 5 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="snacks/steamed chicken momos - Copy.jpg" alt="Tiramisu">
+                        <div class="item-badge2">Non-Veg</div>
+                    </div>
+                    <div class="item-info">
+                        <h3>🍗 Chicken Steamed Momos (6 pcs)</h3>
+                        <p>Tender steamed momos stuffed with juicy chicken — 6 pieces of soft, flavorful comfort in every bite!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹99</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="21" data-name="Panna Cotta" data-price="16" data-img="https://images.unsplash.com/photo-1626700051175-681801c4c2d极?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8极Xx8dGlyYW1pc3V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="21" data-name="Panna Cotta" data-price="16">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               </div>
+
+            
+            </div>
+        </div>
+    </section>
+
+        <section id="waffels" class="menu-section section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">🧇 Waffles</h2>
+                <p class="section-subtitle">Crispy on the outside, fluffy inside — our Waffles are a perfect blend of sweetness and comfort in every bite!</p>
+            </div>
+            <div class="menu-grid">
+                <!-- Dessert 6 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="snacks/waffels.jpg" style="object-position: center 60%;" alt="Macarons">
+                    </div>
+                    <div class="item-info">
+                        <h3>🧇 Regular Waffle</h3>
+                        <p>Waffles that melt hearts with every bite!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹100</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="22" data-name="Macarons" data-price="17" data-img="https://images.unsplash.com/photo-1559620192-032c4bc4674e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y2hlZXNlY2FrZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="22" data-name="Macarons" data-price="17">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dessert 7 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="snacks/black chiocolate waffels.jpg" style="object-position: center 70%;" alt="Chocolate Mousse">
+                    </div>
+                    <div class="item-info">
+                        <h3>🍫 Chocolate Waffle</h3>
+                        <p>Rich, dark, and decadently delicious — pure chocolate indulgence in every bite!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹100</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="23" data-name="Chocolate Mousse" data-price="19" data-img="https://images.unsplash.com/photo-1578985545062-69928b极d9587?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2极8NHx8Y2hvY29sYXRlJTIwbGF2YSUyMGNha2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="23" data-name="Chocolate Mousse" data-price="19">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dessert 8 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="snacks/white chocolate waffels.jpg" alt="Icecream Sundae">
+                    </div>
+                    <div class="item-info">
+                        <h3>🍫 Special Double Chocolate Waffle</h3>
+                        <p>Twice the chocolate, twice the joy — rich, gooey, and made for true chocolate lovers!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹130</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="24" data-name="Icecream Sundae" data-price="15" data-img="https://images.unsplash.com/photo-148369502893极-5bb13f8648b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cGlzdGFjaGlvJTIwZGVzc2VydHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="24" data-name="Icecream Sundae" data-price="15">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+               </div>
+
+            
+            </div>
+        </div>
+    </section>
+
+
+            <section id="frankierolls" class="menu-section section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">🌯 Frankie Rolls</h2>
+                <p class="section-subtitle">Soft rolls stuffed with spicy, flavorful fillings — a perfect handheld treat for your anytime hunger!</p>
+            </div>
+            <div class="menu-grid">
+                <!-- Dessert 6 -->
+               <!-- Dessert 9 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="snacks/chicken frankie rool - Copy.jpg" alt="Icecream Sundae">
+                        <div class="item-badge2">Non-Veg</div>
+                    </div>
+                    <div class="item-info">
+                        <h3>🍗 Chicken Frankie</h3>
+                        <p>Juicy chicken rolled in a soft wrap — spicy, satisfying, and loaded with taste!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹69</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="24" data-name="Icecream Sundae" data-price="15" data-img="https://images.unsplash.com/photo-148369502893极-5bb13f8648b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cGlzdGFjaGlvJTIwZGVzc2VydHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="24" data-name="Icecream Sundae" data-price="15">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dessert 10 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="snacks/veg frankie roll - Copy.jpg" alt="Icecream Sundae">
+                        <div class="item-badge">veg</div>
+                    </div>
+                    <div class="item-info">
+                        <h3>🥦 Veg Frankie</h3>
+                        <p>Stuffed with spicy veggies and wrapped in soft roti — a perfect quick bite full of flavor!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹59</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="24" data-name="Icecream Sundae" data-price="15" data-img="https://images.unsplash.com/photo-148369502893极-5bb13f8648b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cGlzdGFjaGlvJTIwZGVzc2VydHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="24" data-name="Icecream Sundae" data-price="15">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+               </div>
+
+            
+            </div>
+        </div>
+    </section>
+
+
+
+    
+            <section id="puffs" class="menu-section section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">🥐 Puffs</h2>
+                <p class="section-subtitle">Flaky, golden, and oven-fresh — our puffs are the perfect crispy snack for every chai break!</p>
+            </div>
+            <div class="menu-grid">
+                <!-- Dessert 14 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="snacks/egg puff - Copy.jpg" alt="Icecream Sundae">
+                        <div class="item-badge2">Non-Veg</div>
+                    </div>
+                    <div class="item-info">
+                        <h3>🥚 Egg Puff</h3>
+                        <p>Buttery, flaky puff stuffed with spiced egg filling — simple, tasty, and perfectly satisfying!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹20</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="24" data-name="Icecream Sundae" data-price="15" data-img="https://images.unsplash.com/photo-148369502893极-5bb13f8648b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cGlzdGFjaGlvJTIwZGVzc2VydHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="24" data-name="Icecream Sundae" data-price="15">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dessert 15 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="snacks/chicken puff - Copy.jpg" alt="Icecream Sundae">
+                        <div class="item-badge2">Non-Veg</div>
+                    </div>
+                    <div class="item-info">
+                        <h3>🍗 Chicken Puff</h3>
+                        <p>Flaky on the outside, juicy chicken inside — a snack that’s crispy, spicy, and full of flavor!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹25</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="24" data-name="Icecream Sundae" data-price="15" data-img="https://images.unsplash.com/photo-148369502893极-5bb13f8648b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cGlzdGFjaGlvJTIwZGVzc2VydHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="24" data-name="Icecream Sundae" data-price="15">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dessert 16 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="snacks/veg puff - Copy.jpg" alt="Icecream Sundae">
+                        <div class="item-badge">Veg</div>
+                    </div>
+                    <div class="item-info">
+                        <h3>🥦 Veg Puff</h3>
+                        <p>Crispy, golden layers filled with spicy veggie goodness — a perfect tea-time bite!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹25</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="24" data-name="Icecream Sundae" data-price="15" data-img="https://images.unsplash.com/photo-148369502893极-5bb13f8648b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cGlzdGFjaGlvJTIwZGVzc2VydHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="24" data-name="Icecream Sundae" data-price="15">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+               </div>
+
+            
+            </div>
+        </div>
+    </section>
+
+
+
+
+      <section id="samosa" class="menu-section section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">🥟 Samosas</h2>
+                <p class="section-subtitle">Crispy, golden triangles packed with flavorful fillings — your ultimate chai-time snack!</p>
+            </div>
+            <div class="menu-grid">
+                <!-- Dessert 14 -->
+                <!-- Dessert 17 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="snacks/samosa - Copy.jpg" alt="Icecream Sundae">
+                        <div class="item-badge">veg</div>
+                    </div>
+                    <div class="item-info">
+                        <h3>✨ Regular Samosa</h3>
+                        <p>Perfectly fried and flavor-packed — the all-time classic snack!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹20</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="24" data-name="Icecream Sundae" data-price="15" data-img="https://images.unsplash.com/photo-148369502893极-5bb13f8648b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cGlzdGFjaGlvJTIwZGVzc2VydHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="24" data-name="Icecream Sundae" data-price="15">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dessert 18 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="snacks/corn samosa - Copy.jpg" alt="Icecream Sundae">
+                        <div class="item-badge">veg</div>
+                    </div>
+                    <div class="item-info">
+                        <h3>🌽 Corn Samosa</h3>
+                        <p>Sweet corn and spices wrapped in a crunchy, golden crust!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹39</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="24" data-name="Icecream Sundae" data-price="15" data-img="https://images.unsplash.com/photo-148369502893极-5bb13f8648b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cGlzdGFjaGlvJTIwZGVzc2VydHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="24" data-name="Icecream Sundae" data-price="15">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dessert 19 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="snacks/onion samosa - Copy.jpg" alt="Icecream Sundae">
+                        <div class="item-badge">veg</div>
+                    </div>
+                    <div class="item-info">
+                        <h3>🧅 Onion Samosa</h3>
+                        <p>Crispy, spicy, and full of crunchy onion goodness — the street-style favorite!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹25</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="24" data-name="Icecream Sundae" data-price="15" data-img="https://images.unsplash.com/photo-148369502893极-5bb13f8648b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cGlzdGFjaGlvJTIwZGVzc2VydHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="24" data-name="Icecream Sundae" data-price="15">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dessert 20 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="snacks/alu samosa - Copy.jpg" alt="Icecream Sundae">
+                        <div class="item-badge">veg</div>
+                    </div>
+                    <div class="item-info">
+                        <h3>🥔 Aloo Samosa</h3>
+                        <p>Classic spiced potato filling — crispy, hearty, and desi to the core!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹20</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="24" data-name="Icecream Sundae" data-price="15" data-img="https://images.unsplash.com/photo-148369502893极-5bb13f8648b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cGlzdGFjaGlvJTIwZGVzc2VydHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="24" data-name="Icecream Sundae" data-price="15">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+               </div>
+
+            
+            </div>
+        </div>
+    </section>
+
+
+          <section id="chickenStaters" class="menu-section section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">🍗 Chicken Starters</h2>
+                <p class="section-subtitle">Crispy, juicy, and bursting with flavor — our chicken specials are made to spice up every bite!</p>
+            </div>
+            <div class="menu-grid">
+                <!-- <div class="menu-item">
+                    <div class="item-image">
+                        <img src="snacks/chicken drum sticks - Copy.jpg" alt="Icecream Sundae">
+                        <div class="item-badge2">Non-Veg</div>
+                    </div>
+                    <div class="item-info">
+                        <h3>🔥 Chicken Drumsticks</h3>
+                        <p>Crispy-coated, juicy drumsticks cooked to perfection — flavor that hits hard!</p>
+                        <div class="item-meta">
+                            <span class="item-price">$15</span>
+                            <div class="item-actions">
+                                <! <button class="btn-add" data-id="24" data-name="Icecream Sundae" data-price="15" data-img="https://images.unsplash.com/photo-148369502893极-5bb13f8648b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cGlzdGFjaGlvJTIwZGVzc2VydHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="24" data-name="Icecream Sundae" data-price="15">Buy Now</button> -->
+                            <!-- </div>
+                        </div>
+                    </div>
+                </div> --> 
+                <!-- Dessert 12 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="snacks/chicken nuggets - Copy.jpg" alt="Icecream Sundae">
+                        <div class="item-badge2">Non-Veg</div>
+                    </div>
+                    <div class="item-info">
+                        <h3>🍴 Chicken Nuggets (4 pcs)</h3>
+                        <p>Golden, crunchy, and bite-sized — 4 pieces of pure chicken delight!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹99</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="24" data-name="Icecream Sundae" data-price="15" data-img="https://images.unsplash.com/photo-148369502893极-5bb13f8648b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cGlzdGFjaGlvJTIwZGVzc2VydHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="24" data-name="Icecream Sundae" data-price="15">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dessert 13 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="snacks/chicken wings - Copy.jpg" alt="Icecream Sundae">
+                        <div class="item-badge2">Non-Veg</div>
+                    </div>
+                    <div class="item-info">
+                        <h3>🪽 Chicken Wings (4 pcs)</h3>
+                        <p>Juicy, spicy, and perfectly glazed — 4 wings of bold, smoky flavor!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹99</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="24" data-name="Icecream Sundae" data-price="15" data-img="https://images.unsplash.com/photo-148369502893极-5bb13f8648b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cGlzdGFjaGlvJTIwZGVzc2VydHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="24" data-name="Icecream Sundae" data-price="15">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               </div>
+
+            
+            </div>
+        </div>
+    </section>
+
+
+
+    
+          <section id="FromTheFryer" class="menu-section section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">🍟 Fryer Snacks</h2>
+                <p class="section-subtitle">Golden, crispy, and irresistible — the perfect crunchy bites for every craving!</p>
+            </div>
+            <div class="menu-grid">
+               <!-- Dessert 21 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="snacks/french fries - Copy.jpg" alt="Icecream Sundae">
+                    </div>
+                    <div class="item-info">
+                        <h3>🍟 French Fries</h3>
+                        <p>Crispy, golden, and perfectly salted — the ultimate snack for every mood!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹59</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="24" data-name="Icecream Sundae" data-price="15" data-img="https://images.unsplash.com/photo-148369502893极-5bb13f8648b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cGlzdGFjaGlvJTIwZGVzc2VydHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="24" data-name="Icecream Sundae" data-price="15">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dessert 22 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="snacks/potato twister - Copy.jpg" alt="Icecream Sundae">
+                    </div>
+                    <div class="item-info">
+                        <h3>🥔 Potato Twister</h3>
+                        <p>Spiraled, seasoned, and deep-fried to perfection — a fun twist on classic potatoes!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹60</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="24" data-name="Icecream Sundae" data-price="15" data-img="https://images.unsplash.com/photo-148369502893极-5bb13f8648b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cGlzdGFjaGlvJTIwZGVzc2VydHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="24" data-name="Icecream Sundae" data-price="15">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+               </div>
+
+            
+            </div>
+        </div>
+    </section>
+
+
+          <section id="pizza" class="menu-section section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">🍕 Pizzas – A Slice of Happiness!</h2>
+                <p class="section-subtitle">Indulge in our handcrafted pizzas — loaded with fresh toppings, melting cheese, and irresistible flavors in every slice.
+</p>
+            </div>
+            <div class="menu-grid">
+               <!-- Dessert 21 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="snacks/chicken pizza.jpg" alt="Icecream Sundae">
+                        <div class="item-badge2">Non-Veg</div>
+                    </div>
+                    <div class="item-info">
+                        <h3>🍗Cheese Chicken Pizza</h3>
+                        <p>Savor the goodness of tender chicken, melted cheese, and flavorful sauce on a perfectly baked crust.</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹139</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="24" data-name="Icecream Sundae" data-price="15" data-img="https://images.unsplash.com/photo-148369502893极-5bb13f8648b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cGlzdGFjaGlvJTIwZGVzc2VydHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="24" data-name="Icecream Sundae" data-price="15">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dessert 22 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="snacks/veg pizza.jpg" alt="Icecream Sundae">
+                        <div class="item-badge">veg</div>
+                    </div>
+                    <div class="item-info">
+                        <h3>🥦 Cheese Veg Pizza</h3>
+                        <p>A vibrant mix of fresh vegetables, tangy sauce, and gooey cheese that’s bursting with flavor in every slice.</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹119</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="24" data-name="Icecream Sundae" data-price="15" data-img="https://images.unsplash.com/photo-148369502893极-5bb13f8648b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cGlzdGFjaGlvJTIwZGVzc2VydHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="24" data-name="Icecream Sundae" data-price="15">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dessert 22 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="snacks/corn pizza.jpg" alt="Icecream Sundae">
+                        <div class="item-badge">veg</div>
+                    </div>
+                    <div class="item-info">
+                        <h3>🌽Cheese Corn Pizza</h3>
+                        <p>Golden sweet corn layered with rich cheese and herbs for a creamy, comforting pizza experience.</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹129</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="24" data-name="Icecream Sundae" data-price="15" data-img="https://images.unsplash.com/photo-148369502893极-5bb13f8648b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cGlzdGFjaGlvJTIwZGVzc2VydHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="24" data-name="Icecream Sundae" data-price="15">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dessert 22 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="snacks/bread omlate.jpg" alt="Icecream Sundae">
+                        <div class="item-badge2">Non-Veg</div>
+                    </div>
+                    <div class="item-info">
+                        <h3>🍳 Bread Omelette</h3>
+                        <p>Soft bread toasted to perfection and filled with a fluffy, spiced omelette — a classic street-style favorite packed with protein and flavor.</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹49</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="24" data-name="Icecream Sundae" data-price="15" data-img="https://images.unsplash.com/photo-148369502893极-5bb13f8648b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cGlzdGFjaGlvJTIwZGVzc2VydHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="24" data-name="Icecream Sundae" data-price="15">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+               </div>
+
+            
+            </div>
+        </div>
+    </section>
+
+    
+          <section id="sandwich" class="menu-section section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">🥙 Sandwiches – Fresh, Flavorful & Filling!</h2>
+                <p class="section-subtitle">Enjoy every bite of our handcrafted sandwiches made with quality ingredients and delicious flavors.</p>
+            </div>
+            <div class="menu-grid">
+               <!-- Dessert 21 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="snacks/veg sandwich.jpg" alt="Icecream Sundae">
+                        <div class="item-badge">veg</div>
+                    </div>
+                    <div class="item-info">
+                        <h3>🥪 Veg Sandwich</h3>
+                        <p>A wholesome delight filled with fresh veggies, creamy spreads, and aromatic spices — light, tasty, and satisfying.</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹60</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="24" data-name="Icecream Sundae" data-price="15" data-img="https://images.unsplash.com/photo-148369502893极-5bb13f8648b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cGlzdGFjaGlvJTIwZGVzc2VydHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="24" data-name="Icecream Sundae" data-price="15">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dessert 22 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="snacks/chciken sandwich.jpg" alt="Icecream Sundae">
+                        <div class="item-badge2">Non-Veg</div>
+                    </div>
+                    <div class="item-info">
+                        <h3>🍗 Chicken Sandwich</h3>
+                        <p>Tender chicken, crisp lettuce, and melted cheese layered between toasted bread — a perfect balance of flavor and crunch.</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹70</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="24" data-name="Icecream Sundae" data-price="15" data-img="https://images.unsplash.com/photo-148369502893极-5bb13f8648b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cGlzdGFjaGlvJTIwZGVzc2VydHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="24" data-name="Icecream Sundae" data-price="15">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+               </div>
+
+            
+            </div>
+        </div>
+    </section>
+
+
+
+           </div>
+        </div>
+    </section>
+
+    <!-- Tea -->
+    <section id="beverages" class="menu-section section-padding bg-dark">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">🥤 Beverages</h2>
+                <p class="section-subtitle">Refreshing, energizing, and crafted to delight — from creamy shakes to zesty mocktails, sip your way to happiness!</p>
+            </div>
+             <section class="menu-nav">
+             <div class="container">
+             <div class="menu-categories">
+                <a href="#Tea" class="category-link active">🍵 Tea Selection</a>
+                <a href="#Coffee" class="category-link">☕ Coffee Creations</a>
+                <a href="#lassi" class="category-link">🥛 Lassi Delights</a>
+                <a href="#milkshakes" class="category-link">🥤 Milkshake Mania</a>
+                <a href="#mojitos" class="category-link">🍹 Mojitos & Coolers</a>
+                <a href="#millet-based drinks" class="category-link">🌾 Millet-Based Beverages</a>
+             </div>
+             </div>
+             </section>
+
+        <section id="Tea" class="menu-section section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">🍵 Tea Selection</h2>
+                <p class="section-subtitle">From classic brews to spiced indulgences — our teas are crafted to warm your soul and refresh your senses!</p>
+            </div>
+            <div class="menu-grid">
+              <!-- Tea 1 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/pink tea.jpg" alt="Beef Burger">
+                        <div class="item-badge1">Chef's Special</div>
+                     
+                    </div>
+                    <div class="item-info">
+                        <h3>🌸 Pink Tea</h3>
+                        <p>A delicate, rosy-hued tea with a subtle sweet flavor — soothing and unique!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹20</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="25" data-name="Classic Beef Burger" data-price="145" data-img="https://images.unsplash.com/photo-1600891964092-4316c288032e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8f极dhZ3l1JTIwc3RlYWt8ZW58MHx8MHx8fDA%3D&auto=format&极it=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="25" data-name="Classic Beef Burger" data-price="145">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tea 2 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/badam tea.jpg" alt="Chicken Fillet Burger">
+                        <!-- <div class="item-badge">Chef's Special</div> -->
+                    </div>
+                    <div class="item-info">
+                        <h3>🥜 Badam Tea (Almond Tea)</h3>
+                        <p>Creamy, nutty, and lightly sweet — a nourishing delight for tea lovers!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹20</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="26" data-name="Chicken Fillet Burger" data-price="95" data-img="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2极8NXx8bG9ic3R极ciUyMHRoZXJtaWRvcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="26" data-name="Chicken Fillet Burger" data-price="95">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tea 3 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/bellam tea.jpg" style="object-position: center 40%;" alt="Veggie Burger">
+                    </div>
+                    <div class="item-info">
+                        <h3>🍯 Bellam Tea (Jaggery Tea)</h3>
+                        <p>Sweetened naturally with jaggery — comforting, healthy, and deliciously warming!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹12</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="27" data-name="Veggie Burger" data-price="78" data-img="https://images.unsplash.com/photo-1608571423906-2da1e376b7ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mn极8cmFjayUyMG9mJTIwbGFtYnxlbnwwfHwwf极x8MA%3D%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="27" data-name="Veggie Burger" data-price="78">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tea 4 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/miryala tea.jpg" style="object-position: center 70%;" alt="Club Sandwich">
+                        <!-- <div class="item-badge">Chef's Special</div> -->
+                    </div>
+                    <div class="item-info">
+                        <h3>🌶️ Miryala Tea (Pepper Tea)</h3>
+                        <p>Spicy and invigorating — a punch of pepper to awaken your senses!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹20</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="28" data-name="Club Sandwich" data-price="48" data-img="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fG11c2hyb29tJTIwcmlzb3R0b3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="28" data-name="Club Sandwich" data-price="48">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                   
+                
+
+                <!-- Tea 5 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/black tea.jpg" alt="Grilled Cheese Sandwich">
+                    </div>
+                    <div class="item-info">
+                        <h3>🖤 Black Tea</h3>
+                        <p>Strong, robust, and perfectly brewed — the classic tea for every mood!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹10</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="29" data-name="Grilled Cheese Sandwich" data-price="62" data-img="https://images.unsplash.com/photo-1604503468506-a6da5e6ad46b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZHVjayUyMGJyZWFzdHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="29" data-name="Grilled Cheese Sandwich" data-price="62">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tea 6 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/dhum tea.jpg" alt="Margherita Pizza">
+                        
+                    </div>
+                    <div class="item-info">
+                        <h3>🍵 Dhum Tea</h3>
+                        <p>Smoky, aromatic, and full of flavor — a bold tea experience with every sip!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹12</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="30" data-name="Margherita Pizza" data-price="165" data-img="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c2VhZm9vZHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="30" data-name="Margherita Pizza" data-price="165">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tea 7 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/elachi tea.jpg" alt="Pepperoni Pizza">
+                       <!-- <div class="item-badge">Chef's Special</div> -->
+                    </div>
+                    <div class="item-info">
+                        <h3>💚 Elaichi Tea (Cardamom Tea)</h3>
+                        <p>Aromatic cardamom-infused tea — light, refreshing, and soul-soothing!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹20</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="31" data-name="Pepperoni Pizza" data-price="68" data-img="https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZmlsZXQlMjBtaWdub258ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="31" data-name="Pepperoni Pizza" data-price="68">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tea 8 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/green tea.jpg" alt="BBQ Chicken Pizza">
+                      
+                    </div>
+                    <div class="item-info">
+                        <h3>🍵 Green Tea</h3>
+                        <p>Light, refreshing, and antioxidant-rich — a healthy brew for a calm mind!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹20</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="32" data-name="BBQ Chicken Pizza" data-price="72" data-img="https://images.unsplash.com/photo-1594041680534-e8c8cdebd659?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dmVhbCUyMGNob3B8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="32" data-name="BBQ Chicken Pizza" data-price="72">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tea 9 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/ginger tea.jpg" alt="BBQ Chicken Pizza">
+                      
+                    </div>
+                    <div class="item-info">
+                        <h3>🌿 Ginger Tea</h3>
+                        <p>Warm, spicy, and soothing — ginger-infused comfort in every sip!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹15</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="32" data-name="BBQ Chicken Pizza" data-price="72" data-img="https://images.unsplash.com/photo-1594041680534-e8c8cdebd659?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dmVhbCUyMGNob3B8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="32" data-name="BBQ Chicken Pizza" data-price="72">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tea 10 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/kadak tea.jpg" alt="BBQ Chicken Pizza">
+                      
+                    </div>
+                    <div class="item-info">
+                        <h3>☕ Kadak Tea</h3>
+                        <p>Bold, strong, and full-bodied — perfect for tea lovers who like it robust!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹20</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="32" data-name="BBQ Chicken Pizza" data-price="72" data-img="https://images.unsplash.com/photo-1594041680534-e8c8cdebd659?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dmVhbCUyMGNob3B8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="32" data-name="BBQ Chicken Pizza" data-price="72">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tea 11 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/lemon tea.jpg" alt="BBQ Chicken Pizza">
+                      
+                    </div>
+                    <div class="item-info">
+                        <h3>🍋 Lemon Tea</h3>
+                        <p>Tangy, zesty, and refreshing — a citrusy twist to lift your spirits!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹20</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="32" data-name="BBQ Chicken Pizza" data-price="72" data-img="https://images.unsplash.com/photo-1594041680534-e8c8cdebd659?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dmVhbCUyMGNob3B8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="32" data-name="BBQ Chicken Pizza" data-price="72">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tea 12 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/masala tea.jpg" alt="BBQ Chicken Pizza">
+                      
+                    </div>
+                    <div class="item-info">
+                        <h3>🌿 Masala Tea</h3>
+                        <p>A fragrant blend of spices and tea leaves — spicy, warming, and full of flavor!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹20</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="32" data-name="BBQ Chicken Pizza" data-price="72" data-img="https://images.unsplash.com/photo-1594041680534-e8c8cdebd659?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dmVhbCUyMGNob3B8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="32" data-name="BBQ Chicken Pizza" data-price="72">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <!-- Tea 12 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/kashmir tea.jpg" alt="BBQ Chicken Pizza">
+                      
+                    </div>
+                    <div class="item-info">
+                        <h3>🏔️ Kashmir Tea</h3>
+                        <p>A rich, creamy tea infused with nuts and spices — a royal taste of Kashmir!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹20</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="32" data-name="BBQ Chicken Pizza" data-price="72" data-img="https://images.unsplash.com/photo-1594041680534-e8c8cdebd659?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dmVhbCUyMGNob3B8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="32" data-name="BBQ Chicken Pizza" data-price="72">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <!-- Tea 12 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/boost.jpg" alt="BBQ Chicken Pizza">
+                      
+                    </div>
+                    <div class="item-info">
+                        <h3>💪 Boost</h3>
+                        <p>Energy-packed and delicious — a creamy chocolate drink to power your day!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹20</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="32" data-name="BBQ Chicken Pizza" data-price="72" data-img="https://images.unsplash.com/photo-1594041680534-e8c8cdebd659?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dmVhbCUyMGNob3B8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="32" data-name="BBQ Chicken Pizza" data-price="72">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <!-- Tea 12 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/horlicks.jpg" alt="BBQ Chicken Pizza">
+                      
+                    </div>
+                    <div class="item-info">
+                        <h3>🥛 Horlicks</h3>
+                        <p>Nutritious, comforting, and wholesome — the classic malted drink loved by all ages!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹20</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="32" data-name="BBQ Chicken Pizza" data-price="72" data-img="https://images.unsplash.com/photo-1594041680534-e8c8cdebd659?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dmVhbCUyMGNob3B8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="32" data-name="BBQ Chicken Pizza" data-price="72">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+               </div>
+
+            
+            </div>
+        </div>
+    </section>
+
+     <!-- Coffees -->
+    <section id="Coffee" class="menu-section section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">☕ Coffee Creations</h2>
+                <p class="section-subtitle">From bold and classic to chilled and indulgent — sip your way through our handcrafted coffee delights!</p>
+            </div>
+            <div class="menu-grid">
+                <!-- Coffee  1 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/coffee.jpg" alt="Fresh Lemonade">
+                      
+                    </div>
+                    <div class="item-info">
+                        <h3>☕ Coffee (Regular Coffee)</h3>
+                        <p>Smooth, aromatic, and perfectly brewed — a classic cup to kickstart your day!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹20</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="33" data-name="Fresh Lemonade" data-price="15" data-img="https://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8d2luZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="33" data-name="Fresh Lemonade" data-price="15">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coffee 2 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/black coffee.jpg" alt="Iced Tea">
+                    </div>
+                    <div class="item-info">
+                        <h3>🖤 Black Coffee</h3>
+                        <p>Bold, strong, and invigorating — pure coffee flavor in every sip!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹15</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="34" data-name="Iced Tea with Lemon" data-price="18" data-img="https://images.unsplash.com/photo-1535958636474-b021ee887b13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y29ja3RhaWx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="34" data-name="Iced Tea with Lemon" data-price="18">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coffee 3 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/cold coffe.jpg" alt="Mango Smoothie">
+                    </div>
+                    <div class="item-info">
+                        <h3>🥶 Cold Coffee</h3>
+                        <p>Chilled, creamy, and refreshingly sweet — the perfect cool coffee treat!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹49</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="35" data-name="Mango Smoothie" data-price="12" data-img="https://images.unsplash.com/photo-1551538827-9c037cb4f32a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJlZXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="35" data-name="Mango Smoothie" data-price="12">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coffee 4 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/dark chocolate coffee.jpg" style="object-position: center 30%;" alt="Strawberry Milkshake">
+                    </div>
+                    <div class="item-info">
+                        <h3>🍫 Dark Chocolate Coffee</h3>
+                        <p>Rich coffee meets intense dark chocolate — a decadent blend for true coffee lovers!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹20</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="36" data-name="Strawberry Milkshake" data-price="20" data-img="https://images.unsplash.com/photo-1544145945-f90425340c7e?ixlib=rb-4.0.3&ixid=M3wxMjA3极DB8MHxzZWFyY2h8NXx8Y2hhbXBhZ25lfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=极0">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="36" data-name="Strawberry Milkshake" data-price="20">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coffee 5
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/" style="object-position: center 40%;" alt="Cold Coffee Frappe">
+                    </div>
+                    <div class="item-info">
+                        <h3>Cold Coffee Frappe</h3>
+                        <p>Iced coffee blended with milk and topped with foam and Chocolate.</p>
+                        <div class="item-meta">
+                            <span class="item-price">$37</span>
+                            <div class="item-actions">
+                                <button class="btn-add" data-id="37" data-name="Cold Coffee Frappe" data-price="18" data-img="极://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8d2luZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button>
+                                <button class="btn-buy" data-id="37" data-name="Cold Coffee Frappe" data-price="18">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                Drink 6 -->
+                <!-- <div class="menu-item">
+                    <div class="item-image">
+                        <img src="images/WhatsApp Image 2025-09-12 at 8.19.10 AM.jpeg" style="object-position: center 80%;" alt="Cappuccino">
+                    </div>
+                    <div class="item-info">
+                        <h3>Cappuccino</h3>
+                        <p>Espresso topped with steamed milk and a layer of froth.</p>
+                        <div class="item-meta">
+                            <span class="item-price">$12</span>
+                            <div class="item-actions">
+                                <button class="btn-add" data-id="38" data-name="Cappuccino" data-price="12" data-img="https://images.unsplash.com/photo-1535958636474-b021ee887b13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y29ja3RhaWx8ZW58MHx8MHx8fDA%3极&auto=format&fit=crop&w=500&q=80">Add to Cart</button>
+                                <button class="btn-buy" data-id="38" data-name="Cappuccino" data-price="12">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- Drink 7
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="images/WhatsApp Image 2025-09-12 at 8.19.12 AM.jpeg" alt="Hot Chocolate">
+                    </div>
+                    <div class="item-info">
+                        <h3>Hot Chocolate</h3>
+                        <p>Warm, velvety chocolate drink with whipped cream.</p>
+                        <div class="item-meta">
+                            <span class="item-price">$15</span>
+                            <div class="item-actions">
+                                <button class="btn-add" data-id="39" data-name="Hot Chocolate" data-price="15" data-img="https://images.unsplash.com/photo-1551538827-9c037cb4f32a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJlZXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button>
+                                <button class="btn-buy" data-id="39" data-name="Hot Chocolate" data-price="15">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- Drink 8
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="images/WhatsApp Image 2025-09-12 at 8.10.17 AM.jpeg" style="object-position: center 30%;" alt="Sparkling Water">
+                    </div>
+                    <div class="item-info">
+                        <h3>Sparkling Water</h3>
+                        <p>Lightly carbonated water, served chilled.</p>
+                        <div class="item-meta">
+                            <span class="item-price">$16</span>
+                            <div class="item-actions">
+                                <button class="btn-add" data-id="40" data-name="Sparkling Water" data-price="16" data-img="https://images.unsplash.com/photo-1544145945-f90425340c7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2极8NX极8Y2hhbXBhZ25lfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=80">Add to Cart</button>
+                                <button class="btn-buy" data-id="40" data-name="Sparkling Water" data-price="16">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+            </div>
+            </div>
+        </div>
+    </section>
+
+      <section id="lassi" class="menu-section section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">🥛 Lassi Delights</h2>
+                <p class="section-subtitle">Creamy, refreshing, and full of flavor — our lassis are the perfect cool treat for every mood!</p>
+            </div>
+            <div class="menu-grid">
+                <!-- lassi  1 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/lassi.jpg" alt="Fresh Lemonade">
+                      
+                    </div>
+                    <div class="item-info">
+                        <h3>🥛 Regular Lassi</h3>
+                        <p>Smooth, creamy, and refreshingly sweet — the classic lassi everyone loves!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹40</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="33" data-name="Fresh Lemonade" data-price="15" data-img="https://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8d2luZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="33" data-name="Fresh Lemonade" data-price="15">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- lassi 2 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/mango lassi.jpg" alt="Iced Tea">
+                    </div>
+                    <div class="item-info">
+                        <h3>🥭 Mango Lassi</h3>
+                        <p>Refreshing, fruity, and vibrant — the ultimate summer favorite!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹55</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="34" data-name="Iced Tea with Lemon" data-price="18" data-img="https://images.unsplash.com/photo-1535958636474-b021ee887b13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y29ja3RhaWx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="34" data-name="Iced Tea with Lemon" data-price="18">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lassi 3 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/sweet lasssi.jpg" alt="Mango Smoothie">
+                    </div>
+                    <div class="item-info">
+                        <h3>🍯 Sweet Lassi</h3>
+                        <p>Classic, creamy, and lightly sweet — a smooth delight in every sip!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹40</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="35" data-name="Mango Smoothie" data-price="12" data-img="https://images.unsplash.com/photo-1551538827-9c037cb4f32a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJlZXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="35" data-name="Mango Smoothie" data-price="12">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lassi 4 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/banana lassi.jpg" style="object-position: center 30%;" alt="Strawberry Milkshake">
+                    </div>
+                    <div class="item-info">
+                        <h3>🍌 Banana Lassi</h3>
+                        <p>Smooth, naturally sweet, and packed with banana goodness — a tropical delight!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹55</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="36" data-name="Strawberry Milkshake" data-price="20" data-img="https://images.unsplash.com/photo-1544145945-f90425340c7e?ixlib=rb-4.0.3&ixid=M3wxMjA3极DB8MHxzZWFyY2h8NXx8Y2hhbXBhZ25lfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=极0">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="36" data-name="Strawberry Milkshake" data-price="20">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- lassi 5-->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/chocolate lassi.jpg" style="object-position: center 40%;" alt="Cold Coffee Frappe">
+                    </div>
+                    <div class="item-info">
+                        <h3>🍫 Chocolate Lassi</h3>
+                        <p>Rich, chocolaty, and creamy — a sweet indulgence for chocolate lovers!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹55</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="37" data-name="Cold Coffee Frappe" data-price="18" data-img="极://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8d2luZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="37" data-name="Cold Coffee Frappe" data-price="18">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+
+                <!-- <--lassi 6  -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/dry fruit lassi.jpg" style="object-position: center 80%;" alt="Cappuccino">
+                    </div>
+                    <div class="item-info">
+                        <h3>🥜 Dry Fruit Lassi</h3>
+                        <p>Creamy, nutty, and wholesome — a luxurious lassi packed with dry fruits!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹69</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="38" data-name="Cappuccino" data-price="12" data-img="https://images.unsplash.com/photo-1535958636474-b021ee887b13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y29ja3RhaWx8ZW58MHx8MHx8fDA%3极&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="38" data-name="Cappuccino" data-price="12">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Drink 7-->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/strawberry lassi.jpg" alt="Hot Chocolate">
+                    </div>
+                    <div class="item-info">
+                        <h3>🍓 Strawberry Lassi</h3>
+                        <p>Fresh, fruity, and luscious — the perfect blend of strawberry and yogurt!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹55</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="39" data-name="Hot Chocolate" data-price="15" data-img="https://images.unsplash.com/photo-1551538827-9c037cb4f32a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJlZXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="39" data-name="Hot Chocolate" data-price="15">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+
+                <!-- Drink 8
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="images/WhatsApp Image 2025-09-12 at 8.10.17 AM.jpeg" style="object-position: center 30%;" alt="Sparkling Water">
+                    </div>
+                    <div class="item-info">
+                        <h3>Sparkling Water</h3>
+                        <p>Lightly carbonated water, served chilled.</p>
+                        <div class="item-meta">
+                            <span class="item-price">$16</span>
+                            <div class="item-actions">
+                                <button class="btn-add" data-id="40" data-name="Sparkling Water" data-price="16" data-img="https://images.unsplash.com/photo-1544145945-f90425340c7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2极8NX极8Y2hhbXBhZ25lfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=80">Add to Cart</button>
+                                <button class="btn-buy" data-id="40" data-name="Sparkling Water" data-price="16">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+            </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="milkshakes" class="menu-section section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">🥤 Milkshake Mania</h2>
+                <p class="section-subtitle">Thick, creamy, and irresistibly flavorful — sip on our milkshakes for a sweet, indulgent treat anytime!</p>
+            </div>
+            <div class="menu-grid">
+                <!-- milkshake   1 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/chocolate milkshake.jpg" alt="Fresh Lemonade">
+                      
+                    </div>
+                    <div class="item-info">
+                        <h3>🍫 Chocolate Milkshake</h3>
+                        <p>Rich, smooth, and decadently chocolaty — a classic chocolate indulgence!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹79</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="33" data-name="Fresh Lemonade" data-price="15" data-img="https://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8d2luZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="33" data-name="Fresh Lemonade" data-price="15">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- milkshake 2 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/oreo milkshake.jpg" alt="Iced Tea">
+                    </div>
+                    <div class="item-info">
+                        <h3>🍪 Oreo Milkshake</h3>
+                        <p>Chocolatey, crunchy, and dreamy — a cookie lover’s ultimate delight!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹69</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="34" data-name="Iced Tea with Lemon" data-price="18" data-img="https://images.unsplash.com/photo-1535958636474-b021ee887b13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y29ja3RhaWx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="34" data-name="Iced Tea with Lemon" data-price="18">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- milkshake 3 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/mango milkshake.jpg" alt="Mango Smoothie">
+                    </div>
+                    <div class="item-info">
+                        <h3>🥭 Mango Milkshake</h3>
+                        <p>Vibrant, fruity, and tropical — the ultimate mango goodness in every sip!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹79</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="35" data-name="Mango Smoothie" data-price="12" data-img="https://images.unsplash.com/photo-1551538827-9c037cb4f32a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJlZXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="35" data-name="Mango Smoothie" data-price="12">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- milkshake 4 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/rose milkshake.jpg" style="object-position: center 30%;" alt="Strawberry Milkshake">
+                    </div>
+                    <div class="item-info">
+                        <h3>🌹 Rose Milkshake</h3>
+                        <p>Fragrant, floral, and refreshingly sweet — a delicate treat in every sip!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹45</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="36" data-name="Strawberry Milkshake" data-price="20" data-img="https://images.unsplash.com/photo-1544145945-f90425340c7e?ixlib=rb-4.0.3&ixid=M3wxMjA3极DB8MHxzZWFyY2h8NXx8Y2hhbXBhZ25lfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=极0">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="36" data-name="Strawberry Milkshake" data-price="20">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- lassi 5-->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/badam milkshake.jpg" style="object-position: center 40%;" alt="Cold Coffee Frappe">
+                    </div>
+                    <div class="item-info">
+                        <h3>🥜 Badam Milkshake</h3>
+                        <p>Nutty, creamy, and wholesome — a luxurious almond-infused milkshake!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹69</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="37" data-name="Cold Coffee Frappe" data-price="18" data-img="极://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8d2luZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="37" data-name="Cold Coffee Frappe" data-price="18">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+
+                <!-- <--lassi 6  -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/banana milkshake.jpg" style="object-position: center 80%;" alt="Cappuccino">
+                    </div>
+                    <div class="item-info">
+                        <h3>🍌 Banana Milkshake</h3>
+                        <p>Naturally sweet and smooth — a fruity delight packed with banana goodness!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹69</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="38" data-name="Cappuccino" data-price="12" data-img="https://images.unsplash.com/photo-1535958636474-b021ee887b13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y29ja3RhaWx8ZW58MHx8MHx8fDA%3极&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="38" data-name="Cappuccino" data-price="12">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Drink 7-->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/pista milkshake.jpg" alt="Hot Chocolate">
+                    </div>
+                    <div class="item-info">
+                        <h3>💚 Pista Milkshake</h3>
+                        <p>Creamy, nutty, and delicious — the perfect pistachio indulgence!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹69</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="39" data-name="Hot Chocolate" data-price="15" data-img="https://images.unsplash.com/photo-1551538827-9c037cb4f32a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJlZXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="39" data-name="Hot Chocolate" data-price="15">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+
+                <!-- Drink 8-->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/kitkat milkshake.jpg" style="object-position: center 30%;" alt="Sparkling Water">
+                    </div>
+                    <div class="item-info">
+                        <h3>🍫 Kit Kat Milkshake</h3>
+                        <p>Chocolatey, crunchy, and fun — Kit Kat pieces blended into creamy perfection!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹89</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="40" data-name="Sparkling Water" data-price="16" data-img="https://images.unsplash.com/photo-1544145945-f90425340c7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2极8NX极8Y2hhbXBhZ25lfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="40" data-name="Sparkling Water" data-price="16">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+
+                <!-- Drink 8-->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/vennila milkshake.jpg" style="object-position: center 30%;" alt="Sparkling Water">
+                    </div>
+                    <div class="item-info">
+                        <h3>🍦 Vanilla Milkshake</h3>
+                        <p>Classic vanilla flavor, rich and creamy — a timeless favorite!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹69</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="40" data-name="Sparkling Water" data-price="16" data-img="https://images.unsplash.com/photo-1544145945-f90425340c7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2极8NX极8Y2hhbXBhZ25lfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="40" data-name="Sparkling Water" data-price="16">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+
+                <!-- Drink 8-->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/dry fruit milkshake.jpg" style="object-position: center 30%;" alt="Sparkling Water">
+                    </div>
+                    <div class="item-info">
+                        <h3>🥜 Dry Fruit Milkshake</h3>
+                        <p>Nutty, rich, and wholesome — packed with a mix of crunchy dry fruits!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹99</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="40" data-name="Sparkling Water" data-price="16" data-img="https://images.unsplash.com/photo-1544145945-f90425340c7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2极8NX极8Y2hhbXBhZ25lfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="40" data-name="Sparkling Water" data-price="16">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <!-- Drink 8-->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/black current milksahake.jpg" style="object-position: center 30%;" alt="Sparkling Water">
+                    </div>
+                    <div class="item-info">
+                        <h3>🖤 Black Currant Milkshake</h3>
+                        <p>Tangy, fruity, and refreshingly bold — a unique burst of flavor!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹79</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="40" data-name="Sparkling Water" data-price="16" data-img="https://images.unsplash.com/photo-1544145945-f90425340c7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2极8NX极8Y2hhbXBhZ25lfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="40" data-name="Sparkling Water" data-price="16">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <!-- Drink 8-->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/butteracotch milkshake.jpg" style="object-position: center 30%;" alt="Sparkling Water">
+                    </div>
+                    <div class="item-info">
+                        <h3>🍮 Butterscotch Milkshake</h3>
+                        <p>Sweet, buttery, and creamy — a caramel-flavored treat for your taste buds!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹79</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="40" data-name="Sparkling Water" data-price="16" data-img="https://images.unsplash.com/photo-1544145945-f90425340c7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2极8NX极8Y2hhbXBhZ25lfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="40" data-name="Sparkling Water" data-price="16">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="mojitos" class="menu-section section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">🍹 Mojitos & Coolers</h2>
+                <p class="section-subtitle">Refreshing, zesty, and bursting with flavor — sip on our mojitos and coolers to beat the heat in style!</p>
+            </div>
+            <div class="menu-grid">
+                <!-- mojito   1 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/mojito.jpg" alt="Fresh Lemonade">
+                      
+                    </div>
+                    <div class="item-info">
+                        <h3>🥤 Regular Mojito</h3>
+                        <p>Classic, crisp, and minty — the perfect refreshing mojito for any time!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹49</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="33" data-name="Fresh Lemonade" data-price="15" data-img="https://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8d2luZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="33" data-name="Fresh Lemonade" data-price="15">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mojito 2 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/blue mojito.jpg" alt="Iced Tea">
+                    </div>
+                    <div class="item-info">
+                        <h3>🔵 Blue Mojito</h3>
+                        <p>Chilled tea infused with fruity or citrus flavors.</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹49</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="34" data-name="Iced Tea with Lemon" data-price="18" data-img="https://images.unsplash.com/photo-1535958636474-b021ee887b13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y29ja3RhaWx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="34" data-name="Iced Tea with Lemon" data-price="18">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mojito 3 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/rose mojito.jpg" alt="Mango Smoothie">
+                    </div>
+                    <div class="item-info">
+                        <h3>🌹 Rose Mojito</h3>
+                        <p>Floral, fragrant, and lightly sweet — a refreshing rose-infused mojito!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹49</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="35" data-name="Mango Smoothie" data-price="12" data-img="https://images.unsplash.com/photo-1551538827-9c037cb4f32a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJlZXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="35" data-name="Mango Smoothie" data-price="12">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mojito 4 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/mango mojitio.jpg" style="object-position: center 30%;" alt="Strawberry Milkshake">
+                    </div>
+                    <div class="item-info">
+                        <h3>🥭 Mango Mojito</h3>
+                        <p>Sweet, tangy, and tropical — a mango-infused mojito to refresh your senses!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹49</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="36" data-name="Strawberry Milkshake" data-price="20" data-img="https://images.unsplash.com/photo-1544145945-f90425340c7e?ixlib=rb-4.0.3&ixid=M3wxMjA3极DB8MHxzZWFyY2h8NXx8Y2hhbXBhZ25lfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=极0">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="36" data-name="Strawberry Milkshake" data-price="20">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mojito 5-->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/strawberry mojito.jpg" style="object-position: center 40%;" alt="Cold Coffee Frappe">
+                    </div>
+                    <div class="item-info">
+                        <h3>🍓 Strawberry Mojito</h3>
+                        <p>Fruity, refreshing, and zesty — a sweet strawberry twist to your classic mojito!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹49</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="37" data-name="Cold Coffee Frappe" data-price="18" data-img="极://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8d2luZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="37" data-name="Cold Coffee Frappe" data-price="18">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+
+                <!-- <--Mojito 6  -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/watermillon mojito.jpg" style="object-position: center 80%;" alt="Cappuccino">
+                    </div>
+                    <div class="item-info">
+                        <h3>🍉 Watermelon Mojito</h3>
+                        <p>Juicy, fruity, and revitalizing — a tropical twist to your classic mojito!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹49</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="38" data-name="Cappuccino" data-price="12" data-img="https://images.unsplash.com/photo-1535958636474-b021ee887b13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y29ja3RhaWx8ZW58MHx8MHx8fDA%3极&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="38" data-name="Cappuccino" data-price="12">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mojito 7-->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/mint margarita mojito.jpg" alt="Hot Chocolate">
+                    </div>
+                    <div class="item-info">
+                        <h3>🌿 Mint Margarita Mojito</h3>
+                        <p>Crisp, minty, and invigorating — a zesty mojito with a hint of margarita magic!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹49</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="39" data-name="Hot Chocolate" data-price="15" data-img="https://images.unsplash.com/photo-1551538827-9c037cb4f32a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJlZXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="39" data-name="Hot Chocolate" data-price="15">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+
+                <!-- Mojito 8-->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/ginger iced cooler mojito.jpg" style="object-position: center 30%;" alt="Sparkling Water">
+                    </div>
+                    <div class="item-info">
+                        <h3>🌱 Ginger Iced Cooler</h3>
+                        <p>Spicy, tangy, and ultra-refreshing — a ginger kick to cool you down instantly!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹49</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="40" data-name="Sparkling Water" data-price="16" data-img="https://images.unsplash.com/photo-1544145945-f90425340c7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2极8NX极8Y2hhbXBhZ25lfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="40" data-name="Sparkling Water" data-price="16">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+            </div>
+        </div>
+    </section>
+
+       <!-- Coffees -->
+    <section id="millet-based drinks" class="menu-section section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">🌾 Millet-Based Beverages</h2>
+                <p class="section-subtitle">Wholesome, nutritious, and naturally energizing — sip on our millet drinks for a healthy boost anytime!</p>
+            </div>
+            <div class="menu-grid">
+                <!-- Coffee  1 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/ragi java.jpg" alt="Fresh Lemonade">
+                      
+                    </div>
+                    <div class="item-info">
+                        <h3>🥛 Ragi Java</h3>
+                        <p>Nutty, creamy, and packed with the goodness of finger millet — a warm, healthy drink to power your day!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹35</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="33" data-name="Fresh Lemonade" data-price="15" data-img="https://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8d2luZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="33" data-name="Fresh Lemonade" data-price="15">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+            </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="chefs" class="menu-section section-padding bg-dark">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">👨‍🍳 Chef’s Specials</h2>
+                <p class="section-subtitle">Experience our chef’s signature creations — unique dishes made with premium ingredients and a touch of culinary artistry.
+</p>
+            </div>
+            <div class="menu-grid">
+                <!-- Main 1 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="main course/chicken pulao.jpg" alt="grilled chicken">
+                        <div class="item-badge2">Non-Veg</div>
+                    </div>
+                    <div class="item-info">
+                        <h3>🍗 Chicken Cooker Pulao</h3>
+                        <p>Tender chicken cooked with fragrant basmati rice and rich spices — our Chicken Pulao is pure comfort served with irresistible aroma in every bite!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹129</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="9" data-name="Grilled Chicken with Herbs" data-price="125" data-img="https://images.unsplash.com/photo-1600891964092-4316c288032e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHdhZ3l1JTIwc3RlYWt8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="9" data-name="Grilled Chicken with Herbs" data-price="125">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+                <!-- Main 4 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="main course/bagara chicken.jpg" alt="Chicken Tikka">
+                        <div class="item-badge2">Non-Veg</div>
+                        <!-- <div class="item-badge">Tikka Specials</div> -->
+                    </div>
+                    <div class="item-info">
+                        <h3>🌾 Bagara Chicken</h3>
+                        <p>A rich Hyderabadi classic — our Bagara Chicken is simmered in a creamy, nutty gravy bursting with aromatic spices and irresistible flavor!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹99</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="12" data-name="Chicken Tikka Masala" data-price="42" data-img="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fG11c2hyb29tJTIwcmlzb3R0b3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="12" data-name="Chicken Tikka Masala" data-price="42">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dessert 6 -->
+               <!-- Dessert 9 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="snacks/chicken frankie rool - Copy.jpg" alt="Icecream Sundae">
+                        <div class="item-badge2">Non-Veg</div>
+                    </div>
+                    <div class="item-info">
+                        <h3>🍗 Chicken Frankie</h3>
+                        <p>Juicy chicken rolled in a soft wrap — spicy, satisfying, and loaded with taste!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹69</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="24" data-name="Icecream Sundae" data-price="15" data-img="https://images.unsplash.com/photo-148369502893极-5bb13f8648b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cGlzdGFjaGlvJTIwZGVzc2VydHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="24" data-name="Icecream Sundae" data-price="15">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dessert 10 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="snacks/veg frankie roll - Copy.jpg" alt="Icecream Sundae">
+                        <div class="item-badge">veg</div>
+                    </div>
+                    <div class="item-info">
+                        <h3>🥦 Veg Frankie</h3>
+                        <p>Stuffed with spicy veggies and wrapped in soft roti — a perfect quick bite full of flavor!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹59</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="24" data-name="Icecream Sundae" data-price="15" data-img="https://images.unsplash.com/photo-148369502893极-5bb13f8648b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cGlzdGFjaGlvJTIwZGVzc2VydHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="24" data-name="Icecream Sundae" data-price="15">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                 <!-- Dessert 6 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="snacks/waffels.jpg" style="object-position: center 60%;" alt="Macarons">
+                    </div>
+                    <div class="item-info">
+                        <h3>🧇 Regular Waffle</h3>
+                        <p>Waffles that melt hearts with every bite!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹100</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="22" data-name="Macarons" data-price="17" data-img="https://images.unsplash.com/photo-1559620192-032c4bc4674e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y2hlZXNlY2FrZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="22" data-name="Macarons" data-price="17">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dessert 7 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="snacks/black chiocolate waffels.jpg" style="object-position: center 70%;" alt="Chocolate Mousse">
+                    </div>
+                    <div class="item-info">
+                        <h3>🍫 Chocolate Waffle</h3>
+                        <p>Rich, dark, and decadently delicious — pure chocolate indulgence in every bite!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹100</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="23" data-name="Chocolate Mousse" data-price="19" data-img="https://images.unsplash.com/photo-1578985545062-69928b极d9587?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2极8NHx8Y2hvY29sYXRlJTIwbGF2YSUyMGNha2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="23" data-name="Chocolate Mousse" data-price="19">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dessert 8 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="snacks/white chocolate waffels.jpg" alt="Icecream Sundae">
+                    </div>
+                    <div class="item-info">
+                        <h3>🍫 Special Double Chocolate Waffle</h3>
+                        <p>Twice the chocolate, twice the joy — rich, gooey, and made for true chocolate lovers!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹130</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="24" data-name="Icecream Sundae" data-price="15" data-img="https://images.unsplash.com/photo-148369502893极-5bb13f8648b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cGlzdGFjaGlvJTIwZGVzc2VydHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="24" data-name="Icecream Sundae" data-price="15">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="menu-item">
+                    <div class="item-image">
+                        <img src="snacks/veg fried momos - Copy.jpg" alt="Chocolate Symphony">
+                        
+                      
+                    </div>
+                    <div class="item-info">
+                        <h3>🥟 Momos</h3>
+                        <p>Hot, soft, and irresistibly tasty momos!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹60</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="17" data-name="Chocolate Lava Cake" data-price="24" data-img="https://images.unsplash.com/photo-1623334044303-241021148842?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGNob2NvbGF0ZSUyMGRlc3NlcnR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="17" data-name="Chocolate Lava Cake" data-price="24">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dessert 2 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="snacks/momos - Copy.jpg" alt="cheese Cake">
+                        <div class="item-badge">veg</div>
+                    </div>
+                    <div class="item-info">
+                        <h3>🥦 Veg Fried Momos (6 pcs)</h3>
+                        <p>Crispy golden momos packed with spiced veggie goodness — 6 pieces of pure crunchy delight!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹79</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="18" data-name="Cheesecake with Berries" data-price="22" data-img="https://images.unsplash.com/photo-1631051023565-e76853205146?ixlib=rb-4.0.3&ixid=M3wxMjA极fDB8MHxzZWFyY2h8NHx8c291ZmZsZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80">极 to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="18" data-name="Cheesecake with Berries" data-price="22">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dessert 3 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="snacks/steamed veg momos - Copy.jpg" alt="Brownies">
+                    <div class="item-badge">veg</div>
+                    </div>
+                    <div class="item-info">
+                        <h3>🥦 Veg Steamed Momos (6 pcs)</h3>
+                        <p>Soft, warm, and bursting with flavorful veggies — 6 pieces of healthy, steam-fresh delight!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹60</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="19" data-name="Brownies with Icecream" data-price="20" data-img="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZnJ1aXQlMjB0YXJ0fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="19" data-name="Brownies with Icecream" data-price="20">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dessert 4 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="snacks/fried chicken momos - Copy.jpg" style="object-position: center 70%;" alt="Fruit Tart">
+                        <div class="item-badge2">Non-Veg</div>
+                    </div>
+                    <div class="item-info">
+                        <h3>🍗 Chicken Fried Momos (6 pcs)</h3>
+                        <p>Crispy on the outside, juicy chicken inside — 6 pieces of pure crunchy perfection!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹109</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="20" data-name="Friut Tart" data-price="18" data-img="https://images.unsplash.com/photo-149963613621极-6f4ee915583e?ixlib=rb-4.0.3&ixid=M3wxMjA3f极B8MHxzZWFyY2h8NXx8Y3JlYW0lMjBicnVsZWV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="20" data-name="Friut Tart" data-price="18">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dessert 5 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="snacks/steamed chicken momos - Copy.jpg" alt="Tiramisu">
+                        <div class="item-badge2">Non-Veg</div>
+                    </div>
+                    <div class="item-info">
+                        <h3>🍗 Chicken Steamed Momos (6 pcs)</h3>
+                        <p>Tender steamed momos stuffed with juicy chicken — 6 pieces of soft, flavorful comfort in every bite!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹99</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="21" data-name="Panna Cotta" data-price="16" data-img="https://images.unsplash.com/photo-1626700051175-681801c4c2d极?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8极Xx8dGlyYW1pc3V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="21" data-name="Panna Cotta" data-price="16">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="bewrages/pink tea.jpg" alt="Beef Burger">
+                        <!-- <div class="item-badge1">Chef's Special</div> -->
+                     
+                    </div>
+                    <div class="item-info">
+                        <h3>🌸 Pink Tea</h3>
+                        <p>A delicate, rosy-hued tea with a subtle sweet flavor — soothing and unique!</p>
+                        <div class="item-meta">
+                            <span class="item-price">₹20</span>
+                            <div class="item-actions">
+                                <!-- <button class="btn-add" data-id="25" data-name="Classic Beef Burger" data-price="145" data-img="https://images.unsplash.com/photo-1600891964092-4316c288032e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8f极dhZ3l1JTIwc3RlYWt8ZW58MHx8MHx8fDA%3D&auto=format&极it=crop&w=500&q=80">Add to Cart</button> -->
+                                <!-- <button class="btn-buy" data-id="25" data-name="Classic Beef Burger" data-price="145">Buy Now</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+
+
+                <!-- Main 7 -->
+                <!-- <div class="menu-item">
+                    <div class="item-image">
+                        <img src="images/WhatsApp Image 2025-09-12 at 6.13.15 AM.jpeg" alt="Filet Mignon">
+                    </div>
+                    <div class="item-info">
+                        <h3>Grilled Prawns with Garlic Butter</h3>
+                        <p>Large prawns grilled to perfection with garlic butter</p>
+                        <div class="item-meta">
+                            <span class="item-price">$62</span>
+                            <div class="item-actions">
+                                <button class="btn-add" data-id="15" data-name="Grilled Prawns with Garlic Butter" data-price="62" data-img="https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZmlsZXQlMjBtaWdub258ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button>
+                                <button class="btn-buy" data-id="15" data-name="Grilled Prawns with Garlic Butter" data-price="62">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- Main 8 -->
+                <!-- <div class="menu-item">
+                    <div class="item-image">
+                        <img src="images/WhatsApp Image 2025-09-12 at 6.14.34 AM.jpeg" alt="roasted chicken">
+                    </div>
+                    <div class="item-info">
+                        <h3>Honey-Glazed Roasted Chicken</h3>
+                        <p>Slow-roasted chicken brushed with honey glaze.</p>
+                        <div class="item-meta">
+                            <span class="item-price">$74</span>
+                            <div class="item-actions">
+                                <button class="btn-add" data-id="16" data-name="Honey-Glazed Roasted Chicken" data-price="74" data-img="https://images.unsplash.com/photo-1594041680534-e8c8cdebd659?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dmVhbCUyMGNob3B8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=80">Add to Cart</button>
+                                <button class="btn-buy" data-id="16" data-name="Honey-Glazed Roasted Chicken" data-price="74">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+            
+        </div>
+        </div>
+    </section>
+
+   
+  
+
+
+
+        
+    <!-- Cart Modal -->
+    <div class="cart-modal">
+        
+        <div class="cart-modal-content">
+            <span class="cart-close">&times;</span>
+            <h2 class="cart-title">Your Cart</h2>
+            <div class="cart-items">
+                <!-- Cart items will be populated here -->
+            </div>
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="cart-total-price">$0.00</span>
+            </div>
+            <div class="cart-buttons">
+                <button class="btn btn-primary" id="place-order-btn">Place Order</button>
+                <button class="btn btn-secondary" id="continue-shopping">Continue Shopping</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Formspree Modal for Single Item -->
+    <div class="formspree-modal" id="single-item-modal">
+        <div class="formspree-modal-content">
+            <span class="formspree-close">&times;</span>
+            <h2>Order <span id="product-name"></span></h2>
+            <form action="https://formspree.io/f/mdklbqpl" method="POST" id="single-item-form">
+                <input type="hidden" name="product" id="form-product">
+                <input type="hidden" name="price" id="form-price">
+                
+                <div class="order-summary">
+                    <h4>Order Summary</h4>
+                    <div class="order-item">
+                        <span id="summary-product-name"></span>
+                        <span id="summary-product-price"></span>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="single-name">Full Name</label>
+                    <input type="text" id="single-name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="single-email">Email Address</label>
+                    <input type="email" id="single-email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="single-phone">Phone Number</label>
+                    <input type="tel" id="single-phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="single-address">Delivery Address</label>
+                    <textarea id="single-address" name="address" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="single-notes">Special Instructions</label>
+                    <textarea id="single-notes" name="notes" rows="2"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Complete Order</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Formspree Modal for Cart -->
+    <div class="formspree-modal" id="cart-modal">
+        <div class="formspree-modal-content">
+            <span class="formspree-close">&times;</span>
+            <h2>Place Your Order</h2>
+            <form action="https://formspree.io/f/mdklbqpl" method="POST" id="cart-order-form">
+                <input type="hidden" name="order_details" id="order-details">
+                <input type="hidden" name="order_total" id="order-total">
+                
+                <div class="order-summary">
+                    <h4>Order Summary</h4>
+                    <div id="cart-order-summary">
+                        <!-- Cart items will be populated here -->
+                    </div>
+                    <div class="order-item" style="font-weight: bold; border-top: 1px solid var(--tertiary-color); padding-top: 5px;">
+                        <span>Total:</span>
+                        <span id="cart-summary-total">$0.00</span>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="cart-name">Full Name</label>
+                    <input type="text" id="cart-name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="cart-email">Email Address</label>
+                    <input type="email" id="cart-email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="cart-phone">Phone Number</label>
+                    <input type="tel" id="cart-phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="cart-address">Delivery Address</label>
+                    <textarea id="cart-address" name="address" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="cart-notes">Special Instructions</label>
+                    <textarea id="cart-notes" name="notes" rows="2"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Complete Order</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Cart functionality
+        let cart = [];
+        const cartCount = document.querySelector('.cart-count');
+        const cartModal = document.querySelector('.cart-modal');
+        const cartItems = document.querySelector('.cart-items');
+        const cartTotalPrice = document.querySelector('.cart-total-price');
+        const cartIcon = document.querySelector('.cart-icon');
+        const closeCart = document.querySelector('.cart-close');
+        const continueShopping = document.getElementById('continue-shopping');
+        const placeOrderBtn = document.getElementById('place-order-btn');
+        
+        // Formspree modals
+        const singleItemModal = document.getElementById('single-item-modal');
+        const cartOrderModal = document.getElementById('cart-modal');
+        const singleItemClose = singleItemModal.querySelector('.formspree-close');
+        const cartOrderClose = cartOrderModal.querySelector('.formspree-close');
+
+        // Initialize cart from localStorage if available
+        function initCart() {
+            const savedCart = localStorage.getItem('restaurantCart');
+            if (savedCart) {
+                cart = JSON.parse(savedCart);
+                updateCartCount();
+            }
+        }
+
+        cartIcon.addEventListener('click', function() {
+    renderCartItems();
+    cartModal.style.display = 'block';
+});
+
+        // Update cart count badge
+        function updateCartCount() {
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            cartCount.textContent = totalItems;
+        }
+
+        // Add item to cart
+        function addToCart(id, name, price, img) {
+            const existingItem = cart.find(item => item.id === id);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    id,
+                    name,
+                    price,
+                    img,
+                    quantity: 1
+                });
+            }
+            
+            // Save to localStorage
+            localStorage.setItem('restaurantCart', JSON.stringify(cart));
+            
+            updateCartCount();
+            showNotification(`${name} added to cart`);
+            
+            // Open cart modal when adding an item
+            renderCartItems();
+            cartModal.style.display = 'block';
+        }
+
+        // Remove item from cart
+        function removeFromCart(id) {
+            cart = cart.filter(item => item.id !== id);
+            localStorage.setItem('restaurantCart', JSON.stringify(cart));
+            updateCartCount();
+            renderCartItems();
+        }
+
+        // Update item quantity
+        function updateQuantity(id, change) {
+            const item = cart.find(item => item.id === id);
+            if (item) {
+                item.quantity += change;
+                
+                if (item.quantity <= 0) {
+                    removeFromCart(id);
+                } else {
+                    localStorage.setItem('restaurantCart', JSON.stringify(cart));
+                    updateCartCount();
+                    renderCartItems();
+                }
+            }
+        }
+
+        // Render cart items
+        function renderCartItems() {
+            cartItems.innerHTML = '';
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p class="empty-cart">Your cart is empty</p>';
+                cartTotalPrice.textContent = '$0.00';
+                placeOrderBtn.disabled = true;
+                return;
+            }
+            
+            let total = 0;
+            
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                
+                const cartItem = document.createElement('div');
+                cartItem.className = 'cart-item';
+                cartItem.innerHTML = `
+                    <div class="cart-item-info">
+                        <h4>${item.name}</h4>
+                        <p>$${item.price.toFixed(2)} each</p>
+                    </div>
+                    <div class="cart-item-quantity">
+                        <button class="quantity-btn minus" data-id="${item.id}">-</button>
+                        <span>${item.quantity}</span>
+                        <button class="quantity-btn plus" data-id="${item.id}">+</button>
+                    </div>
+                    <div class="cart-item-price">$${itemTotal.toFixed(2)}</div>
+                    <button class="cart-item-remove" data-id="${item.id}">&times;</button>
+                `;
+                
+                cartItems.appendChild(cartItem);
+            });
+            
+            cartTotalPrice.textContent = `$${total.toFixed(2)}`;
+            placeOrderBtn.disabled = false;
+            
+            // Add event listeners to quantity buttons
+            document.querySelectorAll('.quantity-btn.minus').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const id = btn.getAttribute('data-id');
+                    updateQuantity(id, -1);
+                });
+            });
+            
+            
+            document.querySelectorAll('.quantity-btn.plus').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const id = btn.getAttribute('data-id');
+                    updateQuantity(id, 1);
+                });
+            });
+            
+            // Add event listeners to remove buttons
+            document.querySelectorAll('.cart-item-remove').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const id = btn.getAttribute('data-id');
+                    removeFromCart(id);
+                });
+            });
+        }
+
+        // Show notification
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.style.position = 'fixed';
+            notification.style.bottom = '20px';
+            notification.style.right = '20px';
+            notification.style.backgroundColor = 'var(--accent-color)';
+            notification.style.color = 'white';
+            notification.style.padding = '10px 20px';
+            notification.style.borderRadius = '3px';
+            notification.style.zIndex = '10000';
+            notification.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                notification.style.transition = 'opacity 0.5s ease';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 500);
+            }, 3000);
+        }
+
+        // DOM Content Loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            initCart();
+            
+            // Mobile Menu Toggle
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (hamburger && navMenu) {
+                hamburger.addEventListener('click', function() {
+                    hamburger.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+            }
+            
+            // Close mobile menu when clicking on a link
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (hamburger && navMenu) {
+                        hamburger.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    }
+                });
+            });
+            
+            // Add to Cart buttons
+            const addToCartButtons = document.querySelectorAll('.btn-add');
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const id = this.getAttribute('data-id');
+                    const name = this.getAttribute('data-name');
+                    const price = parseFloat(this.getAttribute('data-price'));
+                    const img = this.getAttribute('data-img');
+                    
+                    addToCart(id, name, price, img);
+                });
+            });
+            
+            // Buy Now buttons
+            const buyNowButtons = document.querySelectorAll('.btn-buy');
+            const productName = document.getElementById('product-name');
+            const formProduct = document.getElementById('form-product');
+            const formPrice = document.getElementById('form-price');
+            const summaryProductName = document.getElementById('summary-product-name');
+            const summaryProductPrice = document.getElementById('summary-product-price');
+            
+            buyNowButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const name = this.getAttribute('data-name');
+                    const price = this.getAttribute('data-price');
+                    
+                    productName.textContent = name;
+                    formProduct.value = name;
+                    formPrice.value = price;
+                    summaryProductName.textContent = name;
+                    summaryProductPrice.textContent = `$${price}`;
+                    
+                    singleItemModal.style.display = 'block';
+                });
+            });
+            
+            // Cart functionality
+            cartIcon.addEventListener('click', function() {
+                renderCartItems();
+                cartModal.style.display = 'block';
+            });
+            
+            closeCart.addEventListener('click', function() {
+                cartModal.style.display = 'none';
+            });
+            
+            continueShopping.addEventListener('click', function() {
+                cartModal.style.display = 'none';
+            });
+            
+            placeOrderBtn.addEventListener('click', function() {
+                // Prepare order details for Formspree
+                let orderDetails = '';
+                let total = 0;
+                
+                cart.forEach(item => {
+                    const itemTotal = item.price * item.quantity;
+                    total += itemTotal;
+                    orderDetails += `${item.quantity}x ${item.name} - $${itemTotal.toFixed(2)}\n`;
+                });
+                
+                document.getElementById('order-details').value = orderDetails;
+                document.getElementById('order-total').value = total.toFixed(2);
+                
+                // Update order summary in the form
+                const cartOrderSummary = document.getElementById('cart-order-summary');
+                cartOrderSummary.innerHTML = '';
+                
+                cart.forEach(item => {
+                    const itemTotal = item.price * item.quantity;
+                    const orderItem = document.createElement('div');
+                    orderItem.className = 'order-item';
+                    orderItem.innerHTML = `
+                        <span>${item.quantity}x ${item.name}</span>
+                        <span>$${itemTotal.toFixed(2)}</span>
+                    `;
+                    cartOrderSummary.appendChild(orderItem);
+                });
+                
+                document.getElementById('cart-summary-total').textContent = `$${total.toFixed(2)}`;
+                
+                // Show the cart order modal
+                cartModal.style.display = 'none';
+                cartOrderModal.style.display = 'block';
+            });
+            
+            // Close modals when clicking on close buttons
+            singleItemClose.addEventListener('click', function() {
+                singleItemModal.style.display = 'none';
+            });
+            
+            cartOrderClose.addEventListener('click', function() {
+                cartOrderModal.style.display = 'none';
+            });
+            
+            // Close modals when clicking outside
+            window.addEventListener('click', function(e) {
+                if (e.target === cartModal) {
+                    cartModal.style.display = 'none';
+                }
+                if (e.target === singleItemModal) {
+                    singleItemModal.style.display = 'none';
+                }
+                if (e.target === cartOrderModal) {
+                    cartOrderModal.style.display = 'none';
+                }
+            });
+            
+            // Category navigation
+            const categoryLinks = document.querySelectorAll('.category-link');
+            categoryLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Remove active class from all links
+                    categoryLinks.forEach(l => l.classList.remove('active'));
+                    
+                    // Add active class to clicked link
+                    this.classList.add('active');
+                    
+                    // Scroll to section
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    if (targetSection) {
+                        window.scrollTo({
+                            top: targetSection.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
