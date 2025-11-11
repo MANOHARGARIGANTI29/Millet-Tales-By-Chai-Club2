@@ -364,7 +364,7 @@ h1, h2, h3, h4, h5 {
 .price {
     font-size: 1.2rem;
     font-weight: 600;
-    color: var(--accent-color);
+    color:  #FFC50F;
 }
 
 .btn-view {
